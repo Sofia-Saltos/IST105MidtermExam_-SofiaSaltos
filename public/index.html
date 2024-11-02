@@ -1,0 +1,115 @@
+<!--
+  CCTB Website Development
+  IST105 
+  Oct 2024
+  Description: This is a simple login website where students are asked to 
+  implement Social Network Login with Firebase
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firebase App with Authentication with Social Networks">
+    <title>Login Firebase - Social Networks</title>
+    <link rel="stylesheet" href="./css/core.min.css" />
+    <link rel="stylesheet" href=".\/css/vendor_bundle.min.css" />
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://canvascctb.s3.ca-central-1.amazonaws.com/account_1/attachments/95/CCTB_favicon.ico" />
+    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="https://matriz-teletrabajo-utc.web.app/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <style>
+        body {
+            background-color: rgb(72, 40, 44);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #cd9ea1;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .lead {
+            color: #555555;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: calc(100% - 22px);
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #57122a;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4b2b3a;
+        }
+        .btn.bg-googleplay {
+            background-color: #d5b8b8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section" style="margin-top: 200px;">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-5 fw-bold" style="color: rgb(230, 220, 200);">Welcome to the Login Page!</h1>
+                <p class="lead m-0" style="color: rgb(239, 235, 215);">Sign in to access the content page:</p>
+            </div>
+            <!-- Form -->
+            <div class="col-md-9 col-lg-12 mx-auto">
+                <form action="#" method="post" class="p-4 p-md-5 card rounded-x1">
+                    <input required placeholder="Email" type="email" id="email" name="email" class="form-control" />
+                    <input placeholder="Password" type="password" id="password" class="form-control mt-2" />
+                    <div class="col-12 col-md-12 mt-4">
+                        <button id="sign-in-2" type="button" class="btn btn-primary w-100">Sign In</button>
+                </form>
+                <sub class="text-danger">email: student@college.ca / password: Student2024</sub>
+            </div>
+                <!-- New Section for Phone Sign-in -->
+                <input placeholder="Phone Number" type="tel" id="phone-number" class="form-control mt-2" />
+                <button id="log-in-phonenumber" type="button" class="btn btn-primary w-100 mt-2">Sign In with Phone</button>
+            
+            <!-- End Form -->
+            <div id="recaptcha-container"></div>
+            <!-- Alternative -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <a id="sign-in-button" class="btn bg-googleplay mt-4 text-white w-100" href="#">Google</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
